@@ -5,12 +5,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
+  <script src="/public/scripts.js"></script>
 </head>
 <style>
-  body{
-    margin-top: 30px 
+  body {
+    margin-top: 30px
   }
-  #messageArea{
+
+  #messageArea {
     display: none;
   }
 </style>
@@ -53,15 +55,15 @@
 </body>
 <script>
   $(function () {
-    var socket        = io.connect();
-    var $messageForm  = $(`#messageForm`);
-    var $message      = $(`#message`);
-    var $chat         = $(`#chat`)
-    var $messageArea  = $(`#messageArea`)
+    var socket = io.connect();
+    var $messageForm = $(`#messageForm`);
+    var $message = $(`#message`);
+    var $chat = $(`#chat`)
+    var $messageArea = $(`#messageArea`)
     var $userFormArea = $(`#userFormArea`)
-    var $users        = $(`#users`)
-    var $userForm     = $(`#userForm`)
-    var $username     = $(`#username`)
+    var $users = $(`#users`)
+    var $userForm = $(`#userForm`)
+    var $username = $(`#username`)
 
     $messageForm.submit(function (e) {
       e.preventDefault();
@@ -92,4 +94,5 @@
     })
   })
 </script>
+
 </html>
