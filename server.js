@@ -16,6 +16,7 @@ app.get(`/`, (req, res) => {
 });
 
 io.on(`connection`, socket => {
+  console.log("new user connected")
   connections.push(socket);
 
   //disconnect
