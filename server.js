@@ -27,6 +27,7 @@ io.on(`connection`, socket => {
   });
 
   //send message
+  console.log("asbashd");
 
   socket.on(`send message`, data => {
     io.emit(`new message`, {
