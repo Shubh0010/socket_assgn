@@ -10,12 +10,22 @@ const io = socketio(app.listen(4001, (err, data) => {
 
 const admin = io.of("/admin")
 app.get(`/`, (req, res) => {
+<<<<<<< HEAD
   res.sendFile(__dirname + '/public/index.html')
 })
 
 
 io.on(`connection`, (socket) => {
   connections.push(socket)
+=======
+  res.sendFile(__dirname + "/public/index.html");
+  console.log("heloooooooooooooo")
+});
+
+io.on(`connection`, socket => {
+  console.log("new user connected")
+  connections.push(socket);
+>>>>>>> 5a018cabf479d83dfd1b9029de4045eaf0554c94
 
   //disconnect
   socket.on(`disconnect`, (data) => {
@@ -25,6 +35,7 @@ io.on(`connection`, (socket) => {
   })
 
   //send message
+  console.log("test2");
 
   socket.on(`send message`, (data) => {
     io.emit(`new message`, { msg: data, user: socket.username })
@@ -42,4 +53,8 @@ io.on(`connection`, (socket) => {
   function updateUserNames() {
     io.emit(`get users`, users)
   }
+<<<<<<< HEAD
 })
+=======
+});
+>>>>>>> 5a018cabf479d83dfd1b9029de4045eaf0554c94

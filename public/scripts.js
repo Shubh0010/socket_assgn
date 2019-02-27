@@ -8,7 +8,7 @@ $(function () {
   var $users = $(`#users`)
   var $userForm = $(`#userForm`)
   var $username = $(`#username`)
-
+  console.log("test")
   $messageForm.submit(function (e) {
     e.preventDefault();
     console.log(`submitted`)
