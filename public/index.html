@@ -55,7 +55,7 @@
 </body>
 <script>
   $(function () {
-    var socket = io.connect();
+    var socket = io.connect();z
     var $messageForm = $(`#messageForm`);
     var $message = $(`#message`);
     var $chat = $(`#chat`)
@@ -81,10 +81,13 @@
       socket.emit(`new user`, $username.val(), (data) => {
         if (data) {
           $userFormArea.hide()
+          console.log(4555555555);
+          
           $messageArea.show()
         }
       })
       $username.val(``)
+      console.log("11111111111111")
     })
     socket.on(`get users`, (data) => {
       var html = "";
