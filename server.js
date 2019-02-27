@@ -13,6 +13,7 @@ const io = socketio(
 const admin = io.of("/admin");
 app.get(`/`, (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
+  console.log("heloooooooooooooo")
 });
 
 io.on(`connection`, socket => {
